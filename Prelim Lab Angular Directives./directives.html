@@ -1,0 +1,24 @@
+<h1>Hamster Directives Playground</h1>
+
+<div class="header-image-container">
+  <img [src]="hamsterFactImageUrl" alt="Cute Hamster" class="hamster-header-image">
+</div>
+
+<button (click)="showHamsterFacts = !showHamsterFacts" class="toggle-button">
+  {{ showHamsterFacts ? 'Hide' : 'Show' }} Hamster Facts
+</button>
+
+<div *ngIf="showHamsterFacts" class="hamster-box">
+  <h2>Hamster Fun Fact</h2>
+  <p>Hamsters can store food up to 20% of their body weight in their cheek pouches!</p>
+</div>
+
+<hr>
+
+<h2>Hamster Favorite Foods</h2>
+
+<ul>
+  <li *ngFor="let food of hamsterFoods"
+      [ngClass]="{ 'fav-food': food.favorite }" class="food-item">
+    <img [src]="food.icon" alt="{{ food.name }} icon" class="food-icon" *ngIf="food.icon">
+    {{ food.name }}

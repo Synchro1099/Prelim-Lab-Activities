@@ -1,0 +1,44 @@
+/* # Base styles for the navigation bar */
+nav {
+    background-color: #1e1e2f;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Style for each link */
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover effect */
+nav a:hover {
+    background-color: #4e54c8;
+    color: #ffffff;
+}
+
+/* Active link style (optional, if you use routerLinkActive) */
+nav a.active {
+    background-color: #6c63ff;
+    font-weight: bold;
+}
+
+/* Responsive tweak for smaller screens */
+@media (max-width: 600px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+    nav a {
+        width: 100%;
+        text-align: center;
+    }
+}
